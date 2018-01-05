@@ -22,6 +22,7 @@
         <div class="post-meta">
             <span class="post-meta-item"><i class="iconfont icon-author"></i><a href="{{ site.url }}" target="_blank" rel="author">{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}</a></></span>
             <time class="post-meta-item" datetime="{{ page.date | date:"%y-%m-%d" }}"><i class="iconfont icon-date"></i>{{ page.date | date_to_string }}</time>
+            {%  include read-time.html %}
         </div>
     </div>
     {% if page.cover %}
@@ -47,7 +48,7 @@
 <section class="author-detail">
     <section class="post-footer-item author-card">
         <div class="avatar">
-            <img src="{{ site.avatar | absolute_url }}" alt="">
+            <img src="{{ site.avatar }}" alt="">
         </div>
         <div class="author-name" rel="author">{{ site.author }}</div>
         <div class="bio">
@@ -58,7 +59,7 @@
             {% for s in site.sns %}
             <li>
                 <a href="{{ s[1] }}" target="_blank">
-                    <i class="iconfont icon-{{ s[0] }}"></i>
+                    <i class="fa fa-{{ s[0] }}" aria-hidden="true"></i>
                 </a>
             </li>
             {% endfor %}
